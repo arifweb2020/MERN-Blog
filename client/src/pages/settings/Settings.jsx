@@ -7,9 +7,9 @@ import axios from "axios";
 export default function Settings() {
   const { user, dispatch } = useContext(Context);
   const [file, setFile] = useState(null);
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState(user.username);
+  const [email, setEmail] = useState(user.email);
+ // const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
 
 
@@ -22,7 +22,7 @@ export default function Settings() {
       userId: user._id,
       username,
       email,
-      password,
+      // password,
     };
     if (file) {
       const data = new FormData();
@@ -69,20 +69,21 @@ export default function Settings() {
           <label>Username</label>
           <input
             type="text"
-            value={user.username}
+            value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <label>Email</label>
           <input
             type="email"
-            value={user.email}
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <label>Password</label>
-          <input
+          {/* <input
             type="password"
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
-          />
+          /> */}
           <button className="settingsSubmit" type="submit">
             Update
           </button>
