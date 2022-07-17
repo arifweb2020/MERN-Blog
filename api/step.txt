@@ -1,0 +1,3 @@
+step1 - npm install express mongoose dotenv multer
+
+step2 - npm init
