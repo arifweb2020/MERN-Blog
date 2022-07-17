@@ -6,6 +6,7 @@ import axios from "axios";
 
 export default function Settings() {
   const { user, dispatch } = useContext(Context);
+  // console.log("uesr " + user)
   const [file, setFile] = useState(null);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
